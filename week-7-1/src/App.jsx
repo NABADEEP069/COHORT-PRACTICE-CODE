@@ -1,32 +1,38 @@
 
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
-import './App.css'
-import { Dashboard } from './components/Dashboard'
-import { Landing } from './components/Landing'
+import { useState } from "react"
 
 function App() {
-  const navigate = useNavigate();
+  const [count, setCount] = useState(0);
  
   return (
     <div>
-      <div>
-        <button onClick={() => navigate('/')}>Landing page</button>
-        <button onClick={() => navigate('/dashboard')}>Dashboard</button>
-      </div>
-      <Routes>
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/" element={<Landing />} />
-      </Routes>
+      <Count />
+      <Buttons />
     </div>
-  );
+  )
 }
 
-function AppWrapper() {
-  return (
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  );
+function Count({count}) {
+ return <div>
+  {count}
+ </div>
 }
 
-export default AppWrapper;
+function Buttons() {
+return <div>
+  <button onClick={() => {
+
+  }}> Increase</button>
+</div>
+}
+function Buttons() {
+  return <div>
+    <button onClick={() => {
+  
+    }}> Decrease</button>
+  </div>
+  }
+
+
+
+export default App;
